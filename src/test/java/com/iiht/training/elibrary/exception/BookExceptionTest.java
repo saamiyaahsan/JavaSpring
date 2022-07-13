@@ -35,11 +35,16 @@ class BookExceptionTest {
 	public void testBookIsbnAlreadyExists() throws IOException {
 		Book book = MasterData.getBookData();
 		book.setIsbn("1234567890");
-		ISBNAlreadyExistsException thrown = Assertions.assertThrows(ISBNAlreadyExistsException.class, () -> {
-			inventory.addBook(book);
-		});
+		String errorMessage="";
+		    try{
+				inventory.addBook(book);
+			}catch(BookAlreadyIssuedException ex) {
+				errorMessage = ex.getMessage();
+			}
+				
+		
 		String message = "The ISBN " + book.getIsbn() + " already exists";
-		yakshaAssert(currentTest(), message.contentEquals(thrown.getMessage()) ? true : false, exceptionTestFile);
+		yakshaAssert(currentTest(), message.contentEquals(errorMessage) ? true : false, exceptionTestFile);
 
 	}
 
