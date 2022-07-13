@@ -34,22 +34,30 @@ class BookIssueExceptionTest {
 	@Test()
 	public void testBookIssueBookAlreadyIssuedException() throws IOException {
 		Book book = MasterData.getBookData();
-		BookAlreadyIssuedException exception = Assertions.assertThrows(BookAlreadyIssuedException.class, () -> {
+		String errorMessage = "";
+		   try{
 			inventory.issueBook(book.getIsbn(), "Rohit");
-		});
+		   }catch(BookAlreadyIssuedException ex) {
+			   errorMessage = ex.getMessage();
+		   }
 		String message = "The Book is already Issued";
-		yakshaAssert(currentTest(), message.contentEquals(exception.getMessage()) ? true : false, exceptionTestFile);
+		yakshaAssert(currentTest(), message.contentEquals(errorMessage) ? true : false, exceptionTestFile);
 	}
 
 	@Test()
 	public void testBookIssueISBNDoesNotExistsException() throws IOException {
 		Book book = MasterData.getBookData();
 		book.setIsbn("1111111111");
-		ISBNDoesNotExistsException exception = Assertions.assertThrows(ISBNDoesNotExistsException.class, () -> {
+		String errorMessage="";
+		   try{
 			inventory.issueBook(book.getIsbn(), "Rohit");
-		});
+		   }catch(ISBNDoesNotExistsException ex) {
+               errorMessage = ex.getMessage();
+		   }
+			
+	
 		String message = "ISBN " + book.getIsbn() + " does not exists";
-		yakshaAssert(currentTest(), message.contentEquals(exception.getMessage()) ? true : false, exceptionTestFile);
+		yakshaAssert(currentTest(), message.contentEquals(errorMessage) ? true : false, exceptionTestFile);
 	}
 
 }
