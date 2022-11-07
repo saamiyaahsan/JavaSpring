@@ -38,7 +38,7 @@ class BookExceptionTest {
 		String errorMessage="";
 		    try{
 				inventory.addBook(book);
-			}catch(BookAlreadyIssuedException ex) {
+			}catch(ISBNAlreadyExistsException ex) {
 				errorMessage = ex.getMessage();
 			}
 				
