@@ -1,6 +1,6 @@
  ## Things to be noted that the path for the project is home/coder/project  ## Very Important
 
-## All the files come under this path initial path only :-  home/coder/project only  ##Very Important
+## All the files come under this path initial path only :-  home/coder/project only  ##Very Important (keep it in mind)
 
 ## Entire Terminal Analysis of the project
 coder@12ed35519315:~/project$ mvn clean install exec:java -Dexec.mainClass="com.iiht.training.elibrary.controller.BookInventoryController"
@@ -178,11 +178,38 @@ FAILED : 7
 [INFO] ------------------------------------------------------------------------
 coder@12ed35519315:~/project$ 
 
+## TABLE OF CONTENTS
+1	Project Abstract	3
+2	Common Constraints	3
+3	Template Code Structure	3
+3.1	Package: com.iiht.training.elibrary.model	3
+3.2	Package: com.iiht.training.elibrary.inventory	3
+3.3	Package: com.iiht.training.elibrary.exception	4
+3.4	Package: com.iiht.training.elibrary.controller	5
+4	Execution Steps to Follow	6
+
+## 	PROJECT ABSTRACT
+E-Library Console Application is a pure java application with Java collection, where it allows to manage the books and issue the books from the library.
+
+## COMMON CONSTRAINTS
+1.	Take console input of number of books: (n)
+2.	Take input of details of each book and store it in a collection.
+3.	Take input of details of books to be issued (only 1 book at a time)
+4.	Take input of details of book to issue and store in a collection
+5.	Show the books stock remained after issuing books
+
+### Resources for consideration to solve the problem.
+        3.2	PACKAGE: COM.IIHT.TRAINING.ELIBRARY.INVENTORY  (ignore uppercases)
+BookInventory(class) :	This class contains all the methods which are used to write the business logic for the application.You can create any number of private methods in the class	Status : Partially implemented.
+
+        3.4 PACKAGE: COM.IIHT.TRAINING.ELIBRARY.CONTROLLER  (ignore uppercases)
+BookInventoryController(Class) : This is the class which has the main method. All the business logic methods of the BookInventory class will be called from this class.
+Status : To be implemented
 
 ## Things to do:-
 1) Make changes in the BookInventoryController.java file
 2) Make changes in the BookInventory.java file 
-3) While trying to retain the original structure as maximum as possible
+3) While trying to retain the original structure of both the files as maximum as possible
 
 
 ## Expected outcome:- 
