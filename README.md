@@ -206,6 +206,16 @@ BookInventory(class) :	This class contains all the methods which are used to wri
 BookInventoryController(Class) : This is the class which has the main method. All the business logic methods of the BookInventory class will be called from this class.
 Status : To be implemented
 
+### EXECUTION STEPS TO FOLLOW 
+1. All actions like build, compile, running application, running test cases will be through Command Terminal.
+2. To open the command terminal the test takers need to go to the Application menu (Three horizontal lines at left top) -> Terminal -> New Terminal.
+3. This editor Auto Saves the code.
+4. If you want to exit(logout) and continue the coding later anytime (using Save & Exit option on Assessment Landing Page) then you need to use CTRL+Shift+B-command compulsorily on code IDE. This will push or save the updated contents in the internal git/repository. Else the code will not be available in the next login.
+5. These are time bound assessments the timer would stop if you logout and while logging in back using the same credentials the timer would resume from the same time it was stopped from the previous logout.
+6. To run your project use command: mvn clean install exec:java - Dexec.mainClass="com.iiht.training.elibrary.controller.BookInventoryController"
+7. To test your project, use the command mvn test
+8. You need to use CTRL+Shift+B - command compulsorily on code IDE, before final submission as well. This will push or save the updated contents in the internal git/repository, and will be used to evaluate the code quality
+
 ## Things to do:-
 1) Make changes in the BookInventoryController.java file
 2) Make changes in the BookInventory.java file 
